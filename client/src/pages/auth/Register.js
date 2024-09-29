@@ -23,7 +23,12 @@ function Register() {
               localStorage.setItem('auth',JSON.stringify(data));
               setAuth({...auth,token:data.token,user:data.user});
               toast.success("Registration successfull");
-              navigate('/dashboard/user');
+              setName('');
+              setEmail('');
+              setPassword('');
+
+              
+              navigate('/login');
           }
         } catch (err) {
             console.error(err);
@@ -44,6 +49,7 @@ function Register() {
                             placeholder="Enter your Name" 
                             value={name} 
                             onChange={(e) => setName(e.target.value)} 
+                        
                         />
                         <input 
                             type="email" 

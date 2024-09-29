@@ -29,6 +29,9 @@ function Login() {
             console.error(err);
             toast.error("Login failed. Please try again.");
         }
+        setEmail('');
+        setPassword('');
+
     };
 
     return (
